@@ -21,6 +21,7 @@ User stories live in the "Auto Scheduler — User Stories" doc. Story IDs (US-xx
 - `npm test` — run Vitest
 - `npm run lint` — lint
 - `npm run db:generate` / `npm run db:migrate` — Drizzle migrations
+- `npm run db:seed` / `npm run db:unseed` — add / remove sample data (all owned by user `seed-user`)
 
 ## Architecture
 
