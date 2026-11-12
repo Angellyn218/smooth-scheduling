@@ -1,10 +1,12 @@
+# Local dev database. Credentials come from .env.local (gitignored):
+#   npm run db:up   (= docker compose --env-file .env.local up -d)
 services:
   postgres:
     image: postgres:17
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: smooth_scheduling
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env.local}
+      POSTGRES_DB: ${POSTGRES_DB:-smooth_scheduling}
     ports:
       - "5432:5432"
     volumes:
